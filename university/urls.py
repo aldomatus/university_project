@@ -16,6 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from academic.views import contact_form, contact, home_view
+from users.views import login_view
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('contact-form/', contact_form),
+    path('contact/', contact),
+
+    #   feed page
+
+    path('home/', home_view, name="home"),
+
+    #Login, logout and Register
+    path('login/', login_view, name="login_view")
 ]
