@@ -7,12 +7,11 @@ from django.core.mail import send_mail
 # Create your views here.
 @login_required
 def home_view(request):
-    return render(request, "feed.html")
+    return render(request, "home.html")
 
 def contact_form(request):
     return render(request,"contact_form.html")
     
-
 
 def contact(request):
     if request.method =="POST":
@@ -25,5 +24,6 @@ def contact(request):
         return render(request, "successful_contact.html")
     
     return render(request,"contact_form.html")
+
 
 

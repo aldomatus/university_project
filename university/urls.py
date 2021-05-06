@@ -17,16 +17,18 @@ from django.contrib import admin
 from django.urls import path
 
 from academic.views import contact_form, contact, home_view
-from users.views import login_view
+from users.views import login_view, logout_view, signup_view
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('contact-form/', contact_form),
+    path('contact-form/', contact_form, name="contact_form"),
     path('contact/', contact),
 
     #   feed page
-
     path('home/', home_view, name="home"),
 
     #Login, logout and Register
-    path('login/', login_view, name="login_view")
+    path('users/login/', login_view, name="login"),
+    path('users/logout/', logout_view, name="logout"),
+    path('users/signup/', signup_view, name="signup")
 ]
